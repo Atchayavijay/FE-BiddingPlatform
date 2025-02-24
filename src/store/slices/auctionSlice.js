@@ -162,7 +162,7 @@ export const republishAuction = (id, data) => async (dispatch) => {
   dispatch(auctionSlice.actions.republishItemRequest());
   try {
     const response = await axios.put(
-      `https://be-auctionbidding-1.onrender.com/api/v1/auctionitem/item/republish/${id}`,
+      `https://be-auctionbidding-1.onrender.com/api/v1/auctionitem/republish/${id}`,
       data,
       {
         withCredentials: true,
