@@ -15,9 +15,9 @@ import { Link } from "react-router-dom";
 const SideDrawer = () => {
   const [show, setShow] = useState(false);
 
+  const { isAuthenticated, user } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
-  const { isAuthenticated, user } = useSelector((state) => state.user.isAuthenticated);
   const handleLogout = () => {
     dispatch(logout());
   };
