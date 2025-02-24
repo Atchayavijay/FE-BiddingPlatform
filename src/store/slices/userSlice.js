@@ -88,7 +88,7 @@ export const register = (data) => async (dispatch) => {
       "https://be-auctionbidding-1.onrender.com/api/v1/user/register",
       data,
       {
-        withCredentials: true,
+        // withCredentials: true,
         headers: { "Content-Type": "multipart/form-data" },
       }
     );
