@@ -107,11 +107,8 @@ export const login = (data) => async (dispatch) => {
   try {
     const response = await axios.post(
       "https://be-auctionbidding-1.onrender.com/api/v1/user/login",
-      data,
-      {
-        // withCredentials: true,
-        headers: { "Content-Type": "application/json" },
-      }
+      data
+     
     );
     dispatch(userSlice.actions.loginSuccess(response.data));
     toast.success(response.data.message);
