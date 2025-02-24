@@ -131,7 +131,7 @@ export const getAuctionDetail = (id) => async (dispatch) => {
     dispatch(auctionSlice.actions.resetSlice());
   } catch (error) {
     dispatch(auctionSlice.actions.getAuctionDetailFailed());
-    // console.error(error);
+   
     dispatch(auctionSlice.actions.resetSlice());
   }
 };

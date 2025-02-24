@@ -57,6 +57,7 @@ const userSlice = createSlice({
       state.user = {};
     },
     logoutSuccess(state) {
+      // state.loading=false;
       state.isAuthenticated = false;
       state.user = {};
     },
@@ -124,11 +125,12 @@ export const logout = () => async (dispatch) => {
   try {
     const response = await axios.get(
       "https://be-auctionbidding-1.onrender.com/api/v1/user/logout",
-      // { withCredentials: true }
+      { withCredentials: true }
     );
     dispatch(userSlice.actions.logoutSuccess());
     toast.success(response.data.message);
     dispatch(userSlice.actions.clearAllErrors());
+    // window.location.reload();
   } catch (error) {
     dispatch(userSlice.actions.logoutFailed());
     toast.error(error.response?.data?.message || "Logout failed");
