@@ -145,7 +145,7 @@ export const fetchUser = () => async (dispatch) => {
   try {
     const response = await axios.get(
       "https://be-auctionbidding-1.onrender.com/api/v1/user/me",
-      // { withCredentials: true }
+      { withCredentials: true }
     );
     dispatch(userSlice.actions.fetchUserSuccess(response.data.user));
     dispatch(userSlice.actions.clearAllErrors());
@@ -161,7 +161,7 @@ export const fetchLeaderboard = () => async (dispatch) => {
   try {
     const response = await axios.get(
       "https://be-auctionbidding-1.onrender.com/api/v1/user/leaderboard",
-      
+      { withCredentials: true }
     );
     dispatch(
       userSlice.actions.fetchLeaderboardSuccess(response.data.leaderboard)
